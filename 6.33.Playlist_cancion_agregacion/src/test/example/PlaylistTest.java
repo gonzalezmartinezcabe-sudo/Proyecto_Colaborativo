@@ -11,10 +11,10 @@ public class PlaylistTest {
 
     @BeforeEach
     void setUp() {
-        playlist = new Playlist("Test", "Tester", 2);
-        c1 = new Cancion("Song1", 3);
-        c2 = new Cancion("Song2", 4);
-        c3 = new Cancion("Song3", 5);
+        playlist = new Playlist("PlaylistTest", "Miguel A", 2);
+        c1 = new Cancion("Cancion1", 3);
+        c2 = new Cancion("Cancion2", 4);
+        c3 = new Cancion("Cancion3", 5);
     }
 
     @Test
