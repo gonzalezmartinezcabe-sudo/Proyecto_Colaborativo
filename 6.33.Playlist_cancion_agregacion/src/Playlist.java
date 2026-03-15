@@ -1,11 +1,11 @@
-//Crea una relación de agregación entre Playlist y Cancion. Una misma canción puede
+//Crea una relación de agregación entre java.Playlist y java.Cancion. Una misma canción puede
 //pertenecer a varias playlists. Implementa métodos para añadir y eliminar canciones de
 //la playlist y muestra todas las canciones con su duración
 public class Playlist {
 
     private String nombrePlaylist;
     private String autor;
-    private Cancion [] arrayCancion;
+    private Cancion[] arrayCancion;
     private int contador;
 
     public Playlist(String nombrePlaylist, String autor, int numeroCanciones){
