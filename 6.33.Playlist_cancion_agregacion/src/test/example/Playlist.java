@@ -1,6 +1,12 @@
-//Crea una relación de agregación entre Playlist y Cancion. Una misma canción puede
-//pertenecer a varias playlists. Implementa métodos para añadir y eliminar canciones de
-//la playlist y muestra todas las canciones con su duración
+package test.example;
+
+/**
+ * Clase que gestiona una lista de reproducción de canciones
+ * Permite añadir, eliminar y mostrar el contenido de la playlist
+ *
+ * @author Juan Manuel García León
+ * @version 1.0
+ */
 public class Playlist {
 
     private String nombrePlaylist;
@@ -11,10 +17,17 @@ public class Playlist {
     public Playlist(String nombrePlaylist, String autor, int numeroCanciones){
         this.nombrePlaylist=nombrePlaylist;
         this.autor=autor;
-        this.arrayCancion=new Cancion[numeroCanciones]; //EL ARRAY SE CREA AQUÍ
+        this.arrayCancion=new Cancion[numeroCanciones];
         contador = 0;
     }
 
+
+    /**
+     * Añade una nueva canción a la lista si hay espacio disponible
+     *
+     * @param cancionEjemplo Objeto de tipo Canción que se desea añadir
+     * @return true si se añadió correctamente, false en caso contrario
+     */
     public void anadirCancion(Cancion cancionEjemplo){
             if(contador < arrayCancion.length){
                 arrayCancion[contador]=cancionEjemplo;
@@ -26,9 +39,14 @@ public class Playlist {
             }
     }
 
+    /**
+     * Busca y elimina una canción específica de la lista
+     *
+     * @param cancionEjemplo La canción que se desea eliminar
+     */
+
     public void quitarCancion(Cancion cancionEjemplo){
         int posicion = -1;
-        //RECORREMOS LA PLAYLIST EN BUSCA DE LA CANCION
         for(int i = 0; i < contador; i++){
             if(arrayCancion[i] == cancionEjemplo){
                 posicion = i;
@@ -38,7 +56,7 @@ public class Playlist {
 
         if(posicion != -1){
 
-            // Desplazar a la izquierda
+
             for(int i = posicion; i < contador - 1; i++){
                 arrayCancion[i] = arrayCancion[i + 1];
             }
@@ -52,6 +70,9 @@ public class Playlist {
         }
     }
 
+    /**
+     * Imprime por consola todos los detalles de la playlist y sus canciones
+     */
     public void mostrarPlaylist(){
         System.out.println("La "+nombrePlaylist+" tiene las siguientes canciones: ");
         for(int i = 0; i < arrayCancion.length; i++){
